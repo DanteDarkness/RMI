@@ -1,4 +1,4 @@
-/*
+﻿/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -32,10 +32,10 @@ public class RMIAgendaCliente {
         try {
             InputStreamReader input = new InputStreamReader(System.in);
             BufferedReader br = new BufferedReader(input);
-            Registry registry = LocateRegistry.getRegistry();                   //Listo
-            agenda = (IAgenda) registry.lookup("agenda");                       //listo
-            IAgendaCallback callback = (IAgendaCallback) Class.forName(callbackClass).newInstance();            //Listo
-            agenda.registrarCallback(callback);                                                                 //Listo
+            Registry registry = LocateRegistry.getRegistry();                   
+            agenda = (IAgenda) registry.lookup("agenda");                       
+            IAgendaCallback callback = (IAgendaCallback) Class.forName(callbackClass).newInstance();            
+            agenda.registrarCallback(callback);                                                                 
             do {
                 System.out.println("¿Cuantos registros desea agregar?");
                 String registros = reader.nextLine();
@@ -60,7 +60,7 @@ public class RMIAgendaCliente {
                 ciclo = reader.nextLine();
             } while (ciclo.equals("S") || ciclo.equals("s"));
         } catch (Exception ex) {
-            System.out.println("Aqui esta  ***** ** ** ** ** Error" + ex.getMessage());
+            System.out.println("Error" + ex.getMessage());
         }
         Thread.sleep(5000);
     }
