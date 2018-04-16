@@ -31,7 +31,7 @@ public class Agenda extends UnicastRemoteObject
     //TODO: Implementar el método agregarRegistro
     @Override
     public RegistroAgenda agregarRegistro(RegistroAgenda registro) throws RemoteException {
-    _db.insertar(registro);
+    registro=_db.insertar(registro);
         return registro;
     }
     //public .....
